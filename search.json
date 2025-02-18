@@ -1,17 +1,10 @@
 [
   {
-    "objectID": "posts/000_test_post/index.html",
-    "href": "posts/000_test_post/index.html",
-    "title": "TESTING AGAIN",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "My Explorations with LLMs",
     "section": "",
-    "text": "Read the following and see if you can answer the question:\n\n\nThere are three boxes in a stack. A pink one, a purple one and a green one. The pink one is in the middle of the stack with the purple below it. What is the color of the box on the bottom of the stack?\n\nMost likely you answered purple…\nBut it is possible you first said green (don’t worry if you did it is quite a common response!)\n\n\nIt’s a verbal visual problem that requires some deliberation and most likely for us to create a visual image of a stack of boxes as a reasoning aid.\nNotice also the complexity of the language used in the prompt to describe the scene. The use of natural language as opposed to a formal/logical calculus does hold the potential for ambiguity (multiple interpretations) and inexactness. However, it is the most normal/natural, efficient and broadly accessible way of communicating such information.\nNotice 1. The use of anaphor or reference. - Three BOXES -&gt; a pink/purple/green ONE as opposed to a pink box, a purple box and a green box. - The PINK ONE is in the middle ... the purple {BOX} below IT {the pink box}\nWe tend to try and avoid this kind of repetition to make our speech more coherent.\n\nAlthough the description in language may not be entirely concise, there is no real ambiguity as to how the boxes can be arranged. It must be: | Box | Stack position | | — | — | | GREEN | top | | PINK | middle | | PURPLE | bottom |\n\n\n\n\nGPT3.5 Turbo\n\nHad some difficulties and answered green\nLlama2 (chat 7B version)\n\n\nAnswered correctly (purple) and used some so-called chain-of-thought reasoning\n\nBing Chat (MS Co-pilot)\nThis LLM is GPT4 with some Microsoft specific tuning and RAG (search) additions.\nIt get’s it correct:\n\nThe color of the box on the bottom of the stack is purple. This is because the purple box is below the pink one, which is in the middle of the stack. Therefore, the purple box must be the lowest one. 🟪\n\nBut when you follow up and ask it to create visual representation of the box arrangement\n\nPROMPT: Can you create a visual representation of how the boxes are arranged?\n\nIt responds\n\nRESPONSE: Sure, I’ll try to create that. Here is a visual representation of how the boxes are arranged:\n\nAnd uses DALL-E3 to create 4 different attempts at a visual representation:\n\nNONE OF WHICH ARE CORRECT!!!"
-  },
-  {
-    "objectID": "posts/000_test_post/index.html#a-visualization-problem-for-llms",
-    "href": "posts/000_test_post/index.html#a-visualization-problem-for-llms",
-    "title": "TESTING AGAIN",
-    "section": "",
-    "text": "Read the following and see if you can answer the question:\n\n\nThere are three boxes in a stack. A pink one, a purple one and a green one. The pink one is in the middle of the stack with the purple below it. What is the color of the box on the bottom of the stack?\n\nMost likely you answered purple…\nBut it is possible you first said green (don’t worry if you did it is quite a common response!)\n\n\nIt’s a verbal visual problem that requires some deliberation and most likely for us to create a visual image of a stack of boxes as a reasoning aid.\nNotice also the complexity of the language used in the prompt to describe the scene. The use of natural language as opposed to a formal/logical calculus does hold the potential for ambiguity (multiple interpretations) and inexactness. However, it is the most normal/natural, efficient and broadly accessible way of communicating such information.\nNotice 1. The use of anaphor or reference. - Three BOXES -&gt; a pink/purple/green ONE as opposed to a pink box, a purple box and a green box. - The PINK ONE is in the middle ... the purple {BOX} below IT {the pink box}\nWe tend to try and avoid this kind of repetition to make our speech more coherent.\n\nAlthough the description in language may not be entirely concise, there is no real ambiguity as to how the boxes can be arranged. It must be: | Box | Stack position | | — | — | | GREEN | top | | PINK | middle | | PURPLE | bottom |\n\n\n\n\nGPT3.5 Turbo\n\nHad some difficulties and answered green\nLlama2 (chat 7B version)\n\n\nAnswered correctly (purple) and used some so-called chain-of-thought reasoning\n\nBing Chat (MS Co-pilot)\nThis LLM is GPT4 with some Microsoft specific tuning and RAG (search) additions.\nIt get’s it correct:\n\nThe color of the box on the bottom of the stack is purple. This is because the purple box is below the pink one, which is in the middle of the stack. Therefore, the purple box must be the lowest one. 🟪\n\nBut when you follow up and ask it to create visual representation of the box arrangement\n\nPROMPT: Can you create a visual representation of how the boxes are arranged?\n\nIt responds\n\nRESPONSE: Sure, I’ll try to create that. Here is a visual representation of how the boxes are arranged:\n\nAnd uses DALL-E3 to create 4 different attempts at a visual representation:\n\nNONE OF WHICH ARE CORRECT!!!"
+    "text": "Memory Test\n\n\n\n\n\n\nLLMs\n\n\nMemory\n\n\n\nTesting how long an LLM can remeber my favorite color\n\n\n\n\n\nFeb 3, 2025\n\n\nLogan Brassington\n\n\n\n\n\n\n\n\n\n\n\n\nTESTING AGAIN\n\n\n\n\n\n\nLLMs\n\n\nprompting\n\n\nlogic\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nJan 29, 2025\n\n\nLOGAN BRASSINGTON\n\n\n\n\n\n\n\n\n\n\n\n\nLLM’s Drawing Words\n\n\n\n\n\n\nLLMs\n\n\nArt\n\n\n\nExploration of \n\n\n\n\n\nFeb 10, 2024\n\n\nLogan Brassington\n\n\n\n\n\n\n\n\n\n\n\n\nHumanity’s Last Exam Overview\n\n\n\n\n\n\nLLMs\n\n\nBenchmarking\n\n\n\nAn overview of the HLE Benchmark and how GPT 4o does on a few questions\n\n\n\n\n\nFeb 6, 2024\n\n\nLogan Brassington\n\n\n\n\n\n\n\n\n\n\n\n\nA test post\n\n\n\n\n\n\nLLMs\n\n\nprompting\n\n\nlogic\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nFeb 2, 2024\n\n\nAn LLM User\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/002_Memory_Test/index.html",
@@ -35,11 +28,60 @@
     "text": "Takeaways\nIt is worth noting that initially GPT did a great job at remembering this simple fact after preventing it with a few number of facts, but as that number grew, at some point it was not able to remeber the intial piece of information. My understanding is that this is because there is memory that GPT uses that will run out at a certain point. I would also imagine (as noted above) that the length of the input and information GPT has to remember would impact how many messages can pass while GPT retains this information - which at a certain point is system design more than anything else."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "My Explorations with LLMs",
+    "objectID": "posts/004_LLM_Art/index.html",
+    "href": "posts/004_LLM_Art/index.html",
+    "title": "LLM’s Drawing Words",
     "section": "",
-    "text": "Memory Test\n\n\n\n\n\n\nLLMs\n\n\nMemory\n\n\n\nTesting how long an LLM can remeber my favorite color\n\n\n\n\n\nFeb 3, 2025\n\n\nLogan Brassington\n\n\n\n\n\n\n\n\n\n\n\n\nTESTING AGAIN\n\n\n\n\n\n\nLLMs\n\n\nprompting\n\n\nlogic\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nJan 29, 2025\n\n\nLOGAN BRASSINGTON\n\n\n\n\n\n\n\n\n\n\n\n\nHumanity’s Last Exam Overview\n\n\n\n\n\n\nLLMs\n\n\nBenchmarking\n\n\n\nAn overview of the HLE Benchmark and how GPT 4o does on a few questions\n\n\n\n\n\nFeb 6, 2024\n\n\nLogan Brassington\n\n\n\n\n\n\n\n\n\n\n\n\nA test post\n\n\n\n\n\n\nLLMs\n\n\nprompting\n\n\nlogic\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nFeb 2, 2024\n\n\nAn LLM User\n\n\n\n\n\n\nNo matching items"
+    "text": "One of the areas that I have noticed LLMs to be particularly weak in is specific image generation. These diffusion models perform great when given an abstract task like “draw a cat in the middle of space”:\n\nWe can clearly see that it creatively comes up with a cat (an American cat at that) in vivid detail. We could specify more instruction, like a different art form or change a detail of the cat. However this is where LLMs perfomance in image generation seem to drop off. When tasked with creating more finite images that are seemingly simple - I have found that LLMs tend to create blurry images with mistakes. We can explore this poor perfomance by asking Dalle to generate images containing words that are increasingly complex."
+  },
+  {
+    "objectID": "posts/004_LLM_Art/index.html#image-generation",
+    "href": "posts/004_LLM_Art/index.html#image-generation",
+    "title": "LLM’s Drawing Words",
+    "section": "",
+    "text": "One of the areas that I have noticed LLMs to be particularly weak in is specific image generation. These diffusion models perform great when given an abstract task like “draw a cat in the middle of space”:\n\nWe can clearly see that it creatively comes up with a cat (an American cat at that) in vivid detail. We could specify more instruction, like a different art form or change a detail of the cat. However this is where LLMs perfomance in image generation seem to drop off. When tasked with creating more finite images that are seemingly simple - I have found that LLMs tend to create blurry images with mistakes. We can explore this poor perfomance by asking Dalle to generate images containing words that are increasingly complex."
+  },
+  {
+    "objectID": "posts/004_LLM_Art/index.html#generate-an-image-with-the-word-cat",
+    "href": "posts/004_LLM_Art/index.html#generate-an-image-with-the-word-cat",
+    "title": "LLM’s Drawing Words",
+    "section": "“Generate an image with the word CAT”",
+    "text": "“Generate an image with the word CAT”\n\nWhile this is techincally correct, it seems to have jumped to doing an artistic rendering of the word CAT. We can try to specify things a bit more to recieve the desired output."
+  },
+  {
+    "objectID": "posts/004_LLM_Art/index.html#generate-a-plain-image-with-the-word-cat-the-word-should-be-black-with-a-simple-white-background",
+    "href": "posts/004_LLM_Art/index.html#generate-a-plain-image-with-the-word-cat-the-word-should-be-black-with-a-simple-white-background",
+    "title": "LLM’s Drawing Words",
+    "section": "“Generate a plain image with the word CAT (the word should be black with a simple white background)”",
+    "text": "“Generate a plain image with the word CAT (the word should be black with a simple white background)”\n\nHere we were able to obtain the black word - but the rest of the smaller letters beneath the word CAT look like an eye exam. It is also important to note that some of those smaller letters seem to be smudged or cut off. At this point, maybe if we give some more specification around what we want, we can get the proper result."
+  },
+  {
+    "objectID": "posts/004_LLM_Art/index.html#generate-a-plain-image-with-the-word-cat-the-word-should-be-black-with-a-simple-white-background.-there-should-be-no-other-letters-in-the-image.-the-goal-is-to-mimic-a-black-piece-of-paper-only-the-word-cat.-you-are-not-an-artist.",
+    "href": "posts/004_LLM_Art/index.html#generate-a-plain-image-with-the-word-cat-the-word-should-be-black-with-a-simple-white-background.-there-should-be-no-other-letters-in-the-image.-the-goal-is-to-mimic-a-black-piece-of-paper-only-the-word-cat.-you-are-not-an-artist.",
+    "title": "LLM’s Drawing Words",
+    "section": "“Generate a plain image with the word CAT (the word should be black with a simple white background). There should be no other letters in the image. The goal is to mimic a black piece of paper only the word CAT. You are not an artist.”",
+    "text": "“Generate a plain image with the word CAT (the word should be black with a simple white background). There should be no other letters in the image. The goal is to mimic a black piece of paper only the word CAT. You are not an artist.”\n\nThis time around we can see that this is far closer to the result that we want, but it isn’t exactly right. There is an odd grey boarder that was not requested. At this point - maybe we should ask Chat GPT 4o what the best image generation prompt is:\n\nLet’s try it:"
+  },
+  {
+    "objectID": "posts/004_LLM_Art/index.html#a-plain-white-background-with-the-word-cat-in-bold-black-text-centered.-no-other-elements-decorations-or-details.",
+    "href": "posts/004_LLM_Art/index.html#a-plain-white-background-with-the-word-cat-in-bold-black-text-centered.-no-other-elements-decorations-or-details.",
+    "title": "LLM’s Drawing Words",
+    "section": "“A plain white background with the word ‘CAT’ in bold black text, centered. No other elements, decorations, or details.”",
+    "text": "“A plain white background with the word ‘CAT’ in bold black text, centered. No other elements, decorations, or details.”\n\nThis did the trick! It seems that the exact prompting with Dalle matters the most. At this point it begs more of a UI question with AI that if text to image if meant to be widely accisble, how can an image generation interface be better suited for a layman user? Maybe it would be better to provide users with a more guided experience, such as preset templates for common requests or a more interactive prompt refinement system - instead of requiring users to perfectly craft a text prompt.\nIn the future when trying to generate an image, it might be best to just ask an LLM what the best way to do this is!"
+  },
+  {
+    "objectID": "posts/000_test_post/index.html",
+    "href": "posts/000_test_post/index.html",
+    "title": "TESTING AGAIN",
+    "section": "",
+    "text": "Read the following and see if you can answer the question:\n\n\nThere are three boxes in a stack. A pink one, a purple one and a green one. The pink one is in the middle of the stack with the purple below it. What is the color of the box on the bottom of the stack?\n\nMost likely you answered purple…\nBut it is possible you first said green (don’t worry if you did it is quite a common response!)\n\n\nIt’s a verbal visual problem that requires some deliberation and most likely for us to create a visual image of a stack of boxes as a reasoning aid.\nNotice also the complexity of the language used in the prompt to describe the scene. The use of natural language as opposed to a formal/logical calculus does hold the potential for ambiguity (multiple interpretations) and inexactness. However, it is the most normal/natural, efficient and broadly accessible way of communicating such information.\nNotice 1. The use of anaphor or reference. - Three BOXES -&gt; a pink/purple/green ONE as opposed to a pink box, a purple box and a green box. - The PINK ONE is in the middle ... the purple {BOX} below IT {the pink box}\nWe tend to try and avoid this kind of repetition to make our speech more coherent.\n\nAlthough the description in language may not be entirely concise, there is no real ambiguity as to how the boxes can be arranged. It must be: | Box | Stack position | | — | — | | GREEN | top | | PINK | middle | | PURPLE | bottom |\n\n\n\n\nGPT3.5 Turbo\n\nHad some difficulties and answered green\nLlama2 (chat 7B version)\n\n\nAnswered correctly (purple) and used some so-called chain-of-thought reasoning\n\nBing Chat (MS Co-pilot)\nThis LLM is GPT4 with some Microsoft specific tuning and RAG (search) additions.\nIt get’s it correct:\n\nThe color of the box on the bottom of the stack is purple. This is because the purple box is below the pink one, which is in the middle of the stack. Therefore, the purple box must be the lowest one. 🟪\n\nBut when you follow up and ask it to create visual representation of the box arrangement\n\nPROMPT: Can you create a visual representation of how the boxes are arranged?\n\nIt responds\n\nRESPONSE: Sure, I’ll try to create that. Here is a visual representation of how the boxes are arranged:\n\nAnd uses DALL-E3 to create 4 different attempts at a visual representation:\n\nNONE OF WHICH ARE CORRECT!!!"
+  },
+  {
+    "objectID": "posts/000_test_post/index.html#a-visualization-problem-for-llms",
+    "href": "posts/000_test_post/index.html#a-visualization-problem-for-llms",
+    "title": "TESTING AGAIN",
+    "section": "",
+    "text": "Read the following and see if you can answer the question:\n\n\nThere are three boxes in a stack. A pink one, a purple one and a green one. The pink one is in the middle of the stack with the purple below it. What is the color of the box on the bottom of the stack?\n\nMost likely you answered purple…\nBut it is possible you first said green (don’t worry if you did it is quite a common response!)\n\n\nIt’s a verbal visual problem that requires some deliberation and most likely for us to create a visual image of a stack of boxes as a reasoning aid.\nNotice also the complexity of the language used in the prompt to describe the scene. The use of natural language as opposed to a formal/logical calculus does hold the potential for ambiguity (multiple interpretations) and inexactness. However, it is the most normal/natural, efficient and broadly accessible way of communicating such information.\nNotice 1. The use of anaphor or reference. - Three BOXES -&gt; a pink/purple/green ONE as opposed to a pink box, a purple box and a green box. - The PINK ONE is in the middle ... the purple {BOX} below IT {the pink box}\nWe tend to try and avoid this kind of repetition to make our speech more coherent.\n\nAlthough the description in language may not be entirely concise, there is no real ambiguity as to how the boxes can be arranged. It must be: | Box | Stack position | | — | — | | GREEN | top | | PINK | middle | | PURPLE | bottom |\n\n\n\n\nGPT3.5 Turbo\n\nHad some difficulties and answered green\nLlama2 (chat 7B version)\n\n\nAnswered correctly (purple) and used some so-called chain-of-thought reasoning\n\nBing Chat (MS Co-pilot)\nThis LLM is GPT4 with some Microsoft specific tuning and RAG (search) additions.\nIt get’s it correct:\n\nThe color of the box on the bottom of the stack is purple. This is because the purple box is below the pink one, which is in the middle of the stack. Therefore, the purple box must be the lowest one. 🟪\n\nBut when you follow up and ask it to create visual representation of the box arrangement\n\nPROMPT: Can you create a visual representation of how the boxes are arranged?\n\nIt responds\n\nRESPONSE: Sure, I’ll try to create that. Here is a visual representation of how the boxes are arranged:\n\nAnd uses DALL-E3 to create 4 different attempts at a visual representation:\n\nNONE OF WHICH ARE CORRECT!!!"
   },
   {
     "objectID": "about.html",
@@ -47,13 +89,6 @@
     "title": "About",
     "section": "",
     "text": "About this blog"
-  },
-  {
-    "objectID": "Untitled.html",
-    "href": "Untitled.html",
-    "title": "My Explorations with LLMs",
-    "section": "",
-    "text": "def answer(text):\n    words = text.strip().split()\n    parts = [ w[-1] for w in words ]\n    return ''.join(parts)\n\n\nanswer('DOG CATTT BANANA')\n\n'GTA'"
   },
   {
     "objectID": "posts/001_testing_again/index.html",
@@ -82,5 +117,12 @@
     "title": "Humanity’s Last Exam Overview",
     "section": "",
     "text": "Benchmarking for LLMs is like standarardized testing to compare models. By having models do the same set of tasks or answer the same set of questions, we can see how they perform against eachother. The idea of benchmarking is placing a relative place for compaision and exists in almost all disciplines.\nThe benchmark that we will look at today, Humanity’s Last Exam (HLE), is an exam comprised of 3,000 difficult out of context questions from a variety of fields including, mathematics, humanities, and the natural sciences. The exam is multimodel - with some questions having images and others being purely text-based.\nFor context of the difficult of the exam see the below image of various model’s perfomance on the HLE benchmark:\n\n\n\nWe can see that no model is performing well on the bench mark (with the max being a 13 percent accuracy). Knowing this we can test some of these sample questions on GPT to see how it performs.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe should note that the answers are not provided to these questions (as this would potentially leak them to be trained by an LLM) so for now we will have to use guess ourselves if this is infact the correct response (likely not as we can see above). This benchmark will serve as a good indicator for the progress of LLMs. That is to say that if a model is able to perform well on such an assessment that it has been exposed to such a wide range of material that it is able to answer even the most obscurley difficult domain specific questions correctly. For some, HLE serves as the final indicator of AGI, while for others it is just another in a long line of benchmarks."
+  },
+  {
+    "objectID": "Untitled.html",
+    "href": "Untitled.html",
+    "title": "My Explorations with LLMs",
+    "section": "",
+    "text": "def answer(text):\n    words = text.strip().split()\n    parts = [ w[-1] for w in words ]\n    return ''.join(parts)\n\n\nanswer('DOG CATTT BANANA')\n\n'GTA'"
   }
 ]
