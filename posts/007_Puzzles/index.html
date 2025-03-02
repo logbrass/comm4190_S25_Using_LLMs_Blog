@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Logan Brassington">
+<meta name="dcterms.date" content="2024-02-23">
+<meta name="description" content="Can GPT solve some classic brain teasers?">
 
-<title>My Explorations with LLMs</title>
+<title>GPT Solving Puzzles – My Explorations with LLMs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8647a4a42273f773479d27c00df3f9ed.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-8647a4a42273f773479d27c00df3f9ed.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,77 +69,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">My Explorations with LLMs</span>
     </a>
   </div>
@@ -149,7 +92,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -172,344 +115,117 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">My Explorations with LLMs</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">GPT Solving Puzzles</h1>
+                  <div>
+        <div class="description">
+          Can GPT solve some classic brain teasers?
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">LLMs</div>
+                <div class="quarto-category">prompting</div>
+                <div class="quarto-category">puzzles</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Logan Brassington </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 23, 2024</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(8)</span></div><div class="category" data-category="QXJ0">Art <span class="quarto-category-count">(2)</span></div><div class="category" data-category="QmVuY2htYXJraW5n">Benchmarking <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Sm9iJTIwTWFya2V0">Job Market <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TExNcw==">LLMs <span class="quarto-category-count">(8)</span></div><div class="category" data-category="TWVtb3J5">Memory <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHJvbXB0aW5n">Prompting <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bG9naWM=">logic <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cHJvbXB0aW5n">prompting <span class="quarto-category-count">(3)</span></div><div class="category" data-category="cHV6emxlcw==">puzzles <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<section id="solving-puzzles" class="level2">
+<h2 class="anchored" data-anchor-id="solving-puzzles">Solving Puzzles</h2>
+<p>I’ve always loved solving brain teasers and puzzles - I recently came across this arcticle with some classin puzzles to solve:https://puzzlewocky.com/brain-teasers/classic-short-brain-teasers-and-riddles/</p>
+<p>I know that LLMs struggle with this type of reasoning and natural language parsing - so I figured that it would be interesting to see how GPT performs</p>
+<section id="the-exclusive-club" class="level3">
+<h3 class="anchored" data-anchor-id="the-exclusive-club">The Exclusive Club</h3>
+<p><strong>Question:</strong> Leslie, Eloise, Bill and Bob belong to an exclusive club. What is it?</p>
+<p><strong>GPT Response:</strong> They are all names from the NATO phonetic alphabet: - Leslie → Lima - Eloise → Echo - Bill → Bravo - Bob → Bravo They belong to the “exclusive club” of names found in the phonetic alphabet!</p>
+<p><strong>Answer:</strong> The club of people whose names can be spelled upside down with a calculator: 317537, 351073, 7718, and 808, respectively.</p>
+<p><strong>Analysis:</strong> GPT got this one wrong - but had a very creative response, bringing up the NATO phonetic alphabet.</p>
+</section>
+<section id="mixing-water-and-wine" class="level3">
+<h3 class="anchored" data-anchor-id="mixing-water-and-wine">Mixing Water and Wine</h3>
+<p><strong>Question:</strong> You have a bucket containing one gallon of water and a bucket containing one gallon of wine. You fill a one-cup measuring cup with wine and pour it into the water bucket. You then fill the measuring cup with one cup of the water-wine mixture and pour it back into the wine bucket. At that point, is there more water in the wine, or more wine in the water?</p>
+<p><strong>GPT Response:</strong> The key to solving this is realizing that after the second transfer, the total volume in each bucket remains the same—one gallon in each. However, the amount of wine that leaves the water bucket during the second transfer is proportional to the dilution caused by the first transfer.</p>
+<p>Step 1: First Transfer (Wine to Water) Start with 1 gallon (16 cups) of wine and 1 gallon (16 cups) of water. Transfer 1 cup of wine to the water bucket. Now, the water bucket has 15 cups of water + 1 cup of wine (total: 16 cups), and the wine bucket has 15 cups of wine.</p>
+<p>Step 2: Second Transfer (Water-Wine Mix to Wine Bucket) The water bucket contains a 1:15 wine-to-water ratio (1 wine cup in 16 total). When you take 1 cup from it, the portion taken consists of 15/16 cup water and 1/16 cup wine. Adding this back to the wine bucket, it now contains: 15 + (1/16) = 15 1/16 cups of wine 0 + (15/16) = 15/16 cups of water</p>
+<p>Comparison: Water in Wine vs.&nbsp;Wine in Water The water bucket contains 1 cup of wine. The wine bucket contains 15/16 cup of water. Thus, there is more wine in the water bucket than water in the wine bucket.</p>
+<p><strong>Answer:</strong> The proportions are exactly the same. Because you started with one gallon of water and one gallon of wine, and you now have two one-gallon mixtures, the amount of water that has been transferred to the wine bucket must have been replaced with an equal amount of wine, and vice versa.</p>
+<p><strong>Analysis:</strong> Here despite a lengthy calculation - GPT again got it wrong. I think that if it takes a purely mathmatical approach to these types of questions it will inevitably fail in response.</p>
+</section>
+<section id="mixed-up-math" class="level3">
+<h3 class="anchored" data-anchor-id="mixed-up-math">Mixed-up Math</h3>
+<p><strong>Question:</strong> How can 8 + 8 = 4 ?</p>
+<p><strong>GPT Response:</strong> If you’re working with a 12-hour clock, adding 8 hours to 8 AM lands you at 4 PM.</p>
+<p><strong>Answer:</strong> 8 a.m. plus 8 hours equals 4 p.m.</p>
+<p><strong>Analysis:</strong> GPT got this question correct!</p>
+</section>
+<section id="too-many-dinner-guests" class="level3">
+<h3 class="anchored" data-anchor-id="too-many-dinner-guests">Too Many Dinner Guests</h3>
+<p><strong>Question:</strong> A hostess has prepared a delicious dinner for eight people. However, a ninth person arrives unexpectedly. There is plenty of food, but only eight chairs. It seems someone will have to stand, until the hostess arrives at an ingenious solution. She seats the first guest and has his girlfriend sit on his lap for a minute. Then the seats the third guest in the second chair, the fourth guest in the third chair, and so on, all around the table, until the eighth guest sits in the seventh chair. Then she simply has the ninth guest get off her boyfriend’s lap and take the eighth chair. Nine guests in eight chairs! At least that’s how she describes it to you. Can you see where the hostess misled you?</p>
+<p><strong>GPT Response:</strong> The hostess’s explanation is a clever trick in wording, but it doesn’t actually work. The key flaw in her reasoning is that at the beginning, the first guest’s girlfriend was already using a seat—she was just temporarily sitting on his lap.</p>
+<p>Let’s break it down step by step:</p>
+<ul>
+<li>The first guest sits in chair #1.</li>
+<li>His girlfriend sits on his lap (not in a new chair).</li>
+<li>The third guest sits in chair #2, the fourth in chair #3, and so on.</li>
+<li>By the time the eighth guest sits in chair #7, all seven of the available chairs (besides the one originally used for the lap-sitting trick) are occupied.</li>
+<li>Now, the ninth guest is supposed to take chair #8, but where did it come from?</li>
+</ul>
+<p>The trick is that the hostess made it seem like the ninth guest was “freed up” when the girlfriend stood up, but in reality, she was never taking up a chair in the first place! The total number of seated guests at any given time never exceeds the number of chairs.</p>
+<p>The illusion works by making you think that temporarily placing someone on a lap somehow created an extra chair, but it didn’t—it was just a distraction!</p>
+<p><strong>Answer:</strong> The girlfriend was not the ninth guest; she was the second. The ninth guest is still standing.</p>
+<p><strong>Analysis:</strong> GPT again was able to answer this question correctly!</p>
+</section>
+<section id="splitting-the-inheritance" class="level3">
+<h3 class="anchored" data-anchor-id="splitting-the-inheritance">Splitting the Inheritance</h3>
+<p><strong>Question:</strong> A wealthy matriarch has passed away, leaving a valuable collection of 13 antique vehicles. Her will states that her first-born child will receive half of her collection, her second-born will receive one-third, and her third child will receive one-sixth. The cars may not be sold, but must be divided among the heirs, and if they cannot follow the terms of the will, they get nothing. The three heirs cannot figure out how to split up the vehicles, so they consult with a wise counselor, who comes up with an elegant solution. What does the counselor propose?</p>
+<p><strong>GPT Response:</strong> The problem seems impossible at first because:</p>
+<p>The first-born is supposed to receive ½ of 13 = 6.5 cars The second-born is supposed to receive ⅓ of 13 = 4.33 cars The third-born is supposed to receive ⅙ of 13 = 2.17 cars Since the heirs can’t physically split a car and they aren’t allowed to sell them, they are stuck—until the wise counselor steps in with an elegant trick.</p>
+<p>The Counselor’s Solution: The counselor lends them one additional car, temporarily increasing the collection to 14 cars. Now, dividing 14 among the heirs per the will: First-born gets ½ of 14 = 7 cars Second-born gets ⅓ of 14 = 4 cars Third-born gets ⅙ of 14 = 2 cars The total distributed: 7 + 4 + 2 = 13 cars.</p>
+<p>The extra car (which the counselor lent them) is still there, untouched, so the counselor simply takes it back. This clever trick works because 14 is a common multiple of 2, 3, and 6, making the division possible, while still leaving the original 13 cars correctly distributed.</p>
+<p><strong>Answer:</strong> The counselor takes one vehicle as her fee. The remaining 12 are therefore easy to split up: 6 for the first-born, 4 for the second, and 2 for the third.</p>
+<p><strong>Analysis:</strong> Frankly - both of these answers seem a bit far fetched with the correct answer making slightly more sense than GPT, however it would seem that GPT made a mistake as 14/3 is not 4. That being said I am not sure if this problem has an official correct answer as there seems to be odd rules that can be added to the bargaining</p>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Overall GPT performed fine on these brain teasers - getting some right and others wrong. It is important to recognize that there is a chance that GPT was trained on some of these correct repsonses and would be able to come up with the correct answer right away. It will be interesting to see how LLMs progress against these types of problems as a benchmark.</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="TExNcyUyQ01lbW9yeQ==" data-listing-date-sort="1738540800000" data-listing-file-modified-sort="1740932276906" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="397">
-<div class="thumbnail">
-<p><a href="./posts/002_Memory_Test/index.html" class="no-external"></a></p><a href="./posts/002_Memory_Test/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/002_Memory_Test/img1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/002_Memory_Test/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/002_Memory_Test/index.html" class="no-external">Memory Test</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/002_Memory_Test/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
-LLMs
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('TWVtb3J5'); return false;">
-Memory
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/002_Memory_Test/index.html" class="no-external">Testing how long an LLM can remeber my favorite color</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/002_Memory_Test/index.html" class="no-external">
-<div class="listing-date">
-Feb 3, 2025
-</div>
-<div class="listing-author">
-Logan Brassington
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="TExNcyUyQ3Byb21wdGluZyUyQ2xvZ2lj" data-listing-date-sort="1738108800000" data-listing-file-modified-sort="1740932276898" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="450">
-<div class="thumbnail">
-<p><a href="./posts/000_test_post/index.html" class="no-external"></a></p><a href="./posts/000_test_post/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/000_test_post/gpt3-5.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/000_test_post/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/000_test_post/index.html" class="no-external">TESTING AGAIN</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/000_test_post/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
-LLMs
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvbXB0aW5n'); return false;">
-prompting
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('bG9naWM='); return false;">
-logic
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/000_test_post/index.html" class="no-external">An example post from a Jupyter notebook</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/000_test_post/index.html" class="no-external">
-<div class="listing-date">
-Jan 29, 2025
-</div>
-<div class="listing-author">
-LOGAN BRASSINGTON
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="TExNcyUyQ3Byb21wdGluZyUyQ3B1enpsZXM=" data-listing-date-sort="1708646400000" data-listing-file-modified-sort="1740932276944" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1303">
-<div class="thumbnail">
-<p><a href="./posts/007_Puzzles/index.html" class="no-external"></a></p><a href="./posts/007_Puzzles/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/007_Puzzles/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/007_Puzzles/index.html" class="no-external">GPT Solving Puzzles</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/007_Puzzles/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
-LLMs
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvbXB0aW5n'); return false;">
-prompting
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('cHV6emxlcw=='); return false;">
-puzzles
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/007_Puzzles/index.html" class="no-external">Can GPT solve some classic brain teasers?</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/007_Puzzles/index.html" class="no-external">
-<div class="listing-date">
-Feb 23, 2024
-</div>
-<div class="listing-author">
-Logan Brassington
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="TExNcyUyQ0FydCUyQ1Byb21wdGluZw==" data-listing-date-sort="1708387200000" data-listing-file-modified-sort="1740932276925" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="303">
-<div class="thumbnail">
-<p><a href="./posts/006_adjusting_art/index.html" class="no-external"></a></p><a href="./posts/006_adjusting_art/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/006_adjusting_art/p1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/006_adjusting_art/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/006_adjusting_art/index.html" class="no-external">AI Art Refinement</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/006_adjusting_art/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
-LLMs
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('QXJ0'); return false;">
-Art
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('UHJvbXB0aW5n'); return false;">
-Prompting
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/006_adjusting_art/index.html" class="no-external">Can Dalle refine Images properlyy with natural language?</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/006_adjusting_art/index.html" class="no-external">
-<div class="listing-date">
-Feb 20, 2024
-</div>
-<div class="listing-author">
-An LLM User
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="TExNcyUyQ0pvYiUyME1hcmtldA==" data-listing-date-sort="1708214400000" data-listing-file-modified-sort="1740932276923" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="941">
-<div class="thumbnail">
-<p><a href="./posts/005_ChatGPT_Emotional_Response/index.html" class="no-external"></a></p><a href="./posts/005_ChatGPT_Emotional_Response/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/005_ChatGPT_Emotional_Response/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/005_ChatGPT_Emotional_Response/index.html" class="no-external">Can ChatGPT Replace a Counsler?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/005_ChatGPT_Emotional_Response/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
-LLMs
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Sm9iJTIwTWFya2V0'); return false;">
-Job Market
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/005_ChatGPT_Emotional_Response/index.html" class="no-external">Exploration into LLM for job replacement</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/005_ChatGPT_Emotional_Response/index.html" class="no-external">
-<div class="listing-date">
-Feb 18, 2024
-</div>
-<div class="listing-author">
-Logan Brassington
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="TExNcyUyQ0FydA==" data-listing-date-sort="1707523200000" data-listing-file-modified-sort="1740932276922" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="493">
-<div class="thumbnail">
-<p><a href="./posts/004_LLM_Art/index.html" class="no-external"></a></p><a href="./posts/004_LLM_Art/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/004_LLM_Art/cat.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/004_LLM_Art/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/004_LLM_Art/index.html" class="no-external">LLM’s Drawing Words</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/004_LLM_Art/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
-LLMs
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('QXJ0'); return false;">
-Art
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/004_LLM_Art/index.html" class="no-external">Exploration of </a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/004_LLM_Art/index.html" class="no-external">
-<div class="listing-date">
-Feb 10, 2024
-</div>
-<div class="listing-author">
-Logan Brassington
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="TExNcyUyQ0JlbmNobWFya2luZw==" data-listing-date-sort="1707177600000" data-listing-file-modified-sort="1740932276910" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="305">
-<div class="thumbnail">
-<p><a href="./posts/003_Human_Test/index.html" class="no-external"></a></p><a href="./posts/003_Human_Test/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/003_Human_Test/HLE.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/003_Human_Test/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/003_Human_Test/index.html" class="no-external">Humanity’s Last Exam Overview</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/003_Human_Test/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
-LLMs
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('QmVuY2htYXJraW5n'); return false;">
-Benchmarking
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/003_Human_Test/index.html" class="no-external">An overview of the HLE Benchmark and how GPT 4o does on a few questions</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/003_Human_Test/index.html" class="no-external">
-<div class="listing-date">
-Feb 6, 2024
-</div>
-<div class="listing-author">
-Logan Brassington
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="TExNcyUyQ3Byb21wdGluZyUyQ2xvZ2lj" data-listing-date-sort="1706832000000" data-listing-file-modified-sort="1740932276900" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="450">
-<div class="thumbnail">
-<p><a href="./posts/001_testing_again/index.html" class="no-external"></a></p><a href="./posts/001_testing_again/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/001_testing_again/gpt3-5.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/001_testing_again/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/001_testing_again/index.html" class="no-external">A test post</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/001_testing_again/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
-LLMs
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvbXB0aW5n'); return false;">
-prompting
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('bG9naWM='); return false;">
-logic
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/001_testing_again/index.html" class="no-external">An example post from a Jupyter notebook</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/001_testing_again/index.html" class="no-external">
-<div class="listing-date">
-Feb 2, 2024
-</div>
-<div class="listing-author">
-An LLM User
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
