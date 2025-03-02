@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Logan Brassington">
+<meta name="dcterms.date" content="2024-02-25">
+<meta name="description" content="Exploration of new model">
+
+<title>Claude 3.7 is released – My Explorations with LLMs</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-8647a4a42273f773479d27c00df3f9ed.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">My Explorations with LLMs</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Claude 3.7 is released</h1>
+                  <div>
+        <div class="description">
+          Exploration of new model
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">LLMs</div>
+                <div class="quarto-category">Claude</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Logan Brassington </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 25, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="claude-3.7-sonnet" class="level2">
+<h2 class="anchored" data-anchor-id="claude-3.7-sonnet">Claude 3.7 Sonnet</h2>
+<p>This past week Anthropic announced Claude 3.7 Sonnet. Anthropic largely leads the LLM world for generating code that seemlessly fits into software. In it’s release Anthropic touted Claude 3.7 to be made with a different Philosophy - with an extended thinking mode that can be enabled to fit a given task. The release stated, “In extended thinking mode, it self-reflects before answering, which improves its performance on math, physics, instruction-following, coding, and many other tasks.” One of the interesting features that Claude came up with for this iteration is that users of their API can assign a budget to a given task - a differentiator with the space as many users complain of LLMs chewing through their credit.</p>
+<section id="benchmark-performance" class="level3">
+<h3 class="anchored" data-anchor-id="benchmark-performance">Benchmark Performance</h3>
+<p>Below we can see the performance of the 3.7 modes on different benchmarks. I think it is important to note the difference on AIME - the highschool math competition. The extended thinking performed quite better, than the non-extended thinking version. This is important because this exam is indicative of the types of problems that Computer Scientists must generally solve and informs the models performance with more complicated algorithms.</p>
+<p><img src="p1.png" width="50%"></p>
+</section>
+<section id="comparison" class="level3">
+<h3 class="anchored" data-anchor-id="comparison">Comparison</h3>
+<p>To illustrate the difference between these two types that Anthropic just released - I am going to pose the same prompt to the different versions and record the responses.</p>
+<p>The prompt is going to be “Code the general logic for the game 2048”.</p>
+</section>
+<section id="claude-3.7-sonnet-extended-thinking" class="level3">
+<h3 class="anchored" data-anchor-id="claude-3.7-sonnet-extended-thinking">Claude 3.7 Sonnet Extended Thinking</h3>
+<p><strong>I will note that Claude “thought” for about 10 seconds before generation this response and code:</strong></p>
+<p>I’ll create the core logic for the 2048 game in JavaScript. This implementation will include the game board, movement mechanics, tile merging, and win/lose conditions.</p>
+<p>This implementation provides all the core game logic for 2048. Here’s an overview of how it works:</p>
+<ul>
+<li>The game is played on a 4×4 grid</li>
+<li>Initially, two tiles (either 2 or 4) are randomly placed on the grid</li>
+<li>Each move slides all tiles in one direction (up, down, left, or right)</li>
+<li>Tiles with the same values merge when they collide during a move</li>
+<li>After each successful move, a new tile (2 or 4) appears on a random empty cell</li>
+<li>The game is won when a tile with the value 2048 is created</li>
+<li>The game is lost when the grid is full and no more moves are possible</li>
+</ul>
+<p>The code handles: - Moving and merging tiles in all four directions - Tracking the game score (incremented when tiles merge) - Detecting win condition (2048 tile created) - Detecting loss condition (no valid moves possible) - Managing the game state</p>
+<p>To use this code, you’d need to create a user interface that displays the grid and handles user input. The commented section at the bottom shows an example of how to handle keyboard input.</p>
+<p>Would you like me to explain any specific part of the implementation in more detail?</p>
+<p><strong>Here is the implementation</strong> class Game2048 { constructor() { // Initialize 4x4 game board this.grid = Array(4).fill().map(() =&gt; Array(4).fill(0)); this.score = 0; this.won = false; this.lost = false;</p>
+<pre><code>// Start the game with two random tiles
+this.addRandomTile();
+this.addRandomTile();</code></pre>
+<p>}</p>
+<p>// Reset the game reset() { this.grid = Array(4).fill().map(() =&gt; Array(4).fill(0)); this.score = 0; this.won = false; this.lost = false; this.addRandomTile(); this.addRandomTile(); }</p>
+<p>// Get all empty cells getEmptyCells() { const emptyCells = []; for (let r = 0; r &lt; 4; r++) { for (let c = 0; c &lt; 4; c++) { if (this.grid[r][c] === 0) { emptyCells.push({ r, c }); } } } return emptyCells; }</p>
+<p>// Add a random tile (2 or 4) to an empty cell addRandomTile() { const emptyCells = this.getEmptyCells();</p>
+<pre><code>if (emptyCells.length &gt; 0) {
+  const { r, c } = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+  // 90% chance of 2, 10% chance of 4
+  this.grid[r][c] = Math.random() &lt; 0.9 ? 2 : 4;
+}</code></pre>
+<p>}</p>
+<p>// Check if the game is over isGameOver() { // Check if board is full if (this.getEmptyCells().length &gt; 0) { return false; }</p>
+<pre><code>// Check if any moves are possible
+for (let r = 0; r &lt; 4; r++) {
+  for (let c = 0; c &lt; 3; c++) {
+    if (this.grid[r][c] === this.grid[r][c + 1]) {
+      return false;
+    }
+  }
+}
+
+for (let c = 0; c &lt; 4; c++) {
+  for (let r = 0; r &lt; 3; r++) {
+    if (this.grid[r][c] === this.grid[r + 1][c]) {
+      return false;
+    }
+  }
+}
+
+return true;</code></pre>
+<p>}</p>
+<p>// Check if player has won checkWin() { for (let r = 0; r &lt; 4; r++) { for (let c = 0; c &lt; 4; c++) { if (this.grid[r][c] === 2048) { this.won = true; return true; } } } return false; }</p>
+<p>// Move tiles to the left and merge if possible moveLeft() { let moved = false;</p>
+<pre><code>for (let r = 0; r &lt; 4; r++) {
+  // 1. Remove all zeros
+  let row = this.grid[r].filter(val =&gt; val !== 0);
+  
+  // 2. Merge adjacent matching values
+  for (let c = 0; c &lt; row.length - 1; c++) {
+    if (row[c] === row[c + 1]) {
+      row[c] *= 2;
+      this.score += row[c];
+      row.splice(c + 1, 1);
+      moved = true;
+    }
+  }
+  
+  // 3. Fill the rest with zeros
+  while (row.length &lt; 4) {
+    row.push(0);
+  }
+  
+  // 4. Check if anything moved
+  for (let c = 0; c &lt; 4; c++) {
+    if (this.grid[r][c] !== row[c]) {
+      moved = true;
+    }
+  }
+  
+  // 5. Update the grid
+  this.grid[r] = row;
+}
+
+return moved;</code></pre>
+<p>}</p>
+<p>// Move tiles to the right and merge if possible moveRight() { let moved = false;</p>
+<pre><code>for (let r = 0; r &lt; 4; r++) {
+  // 1. Remove all zeros
+  let row = this.grid[r].filter(val =&gt; val !== 0);
+  
+  // 2. Merge adjacent matching values from right to left
+  for (let c = row.length - 1; c &gt; 0; c--) {
+    if (row[c] === row[c - 1]) {
+      row[c] *= 2;
+      this.score += row[c];
+      row.splice(c - 1, 1);
+      row.unshift(0);
+      moved = true;
+    }
+  }
+  
+  // 3. Fill the rest with zeros
+  while (row.length &lt; 4) {
+    row.unshift(0);
+  }
+  
+  // 4. Check if anything moved
+  for (let c = 0; c &lt; 4; c++) {
+    if (this.grid[r][c] !== row[c]) {
+      moved = true;
+    }
+  }
+  
+  // 5. Update the grid
+  this.grid[r] = row;
+}
+
+return moved;</code></pre>
+<p>}</p>
+<p>// Move tiles up and merge if possible moveUp() { let moved = false;</p>
+<pre><code>for (let c = 0; c &lt; 4; c++) {
+  // 1. Create a column and remove zeros
+  let col = [];
+  for (let r = 0; r &lt; 4; r++) {
+    if (this.grid[r][c] !== 0) {
+      col.push(this.grid[r][c]);
+    }
+  }
+  
+  // 2. Merge adjacent matching values
+  for (let r = 0; r &lt; col.length - 1; r++) {
+    if (col[r] === col[r + 1]) {
+      col[r] *= 2;
+      this.score += col[r];
+      col.splice(r + 1, 1);
+      moved = true;
+    }
+  }
+  
+  // 3. Fill the rest with zeros
+  while (col.length &lt; 4) {
+    col.push(0);
+  }
+  
+  // 4. Update the grid and check if moved
+  for (let r = 0; r &lt; 4; r++) {
+    if (this.grid[r][c] !== col[r]) {
+      moved = true;
+    }
+    this.grid[r][c] = col[r];
+  }
+}
+
+return moved;</code></pre>
+<p>}</p>
+<p>// Move tiles down and merge if possible moveDown() { let moved = false;</p>
+<pre><code>for (let c = 0; c &lt; 4; c++) {
+  // 1. Create a column and remove zeros
+  let col = [];
+  for (let r = 0; r &lt; 4; r++) {
+    if (this.grid[r][c] !== 0) {
+      col.push(this.grid[r][c]);
+    }
+  }
+  
+  // 2. Merge adjacent matching values from bottom to top
+  for (let r = col.length - 1; r &gt; 0; r--) {
+    if (col[r] === col[r - 1]) {
+      col[r] *= 2;
+      this.score += col[r];
+      col.splice(r - 1, 1);
+      col.unshift(0);
+      moved = true;
+    }
+  }
+  
+  // 3. Fill the rest with zeros
+  while (col.length &lt; 4) {
+    col.unshift(0);
+  }
+  
+  // 4. Update the grid and check if moved
+  for (let r = 0; r &lt; 4; r++) {
+    if (this.grid[r][c] !== col[r]) {
+      moved = true;
+    }
+    this.grid[r][c] = col[r];
+  }
+}
+
+return moved;</code></pre>
+<p>}</p>
+<p>// Make a move in the specified direction move(direction) { if (this.won || this.lost) { return false; }</p>
+<pre><code>let moved = false;
+
+switch (direction) {
+  case 'left':
+    moved = this.moveLeft();
+    break;
+  case 'right':
+    moved = this.moveRight();
+    break;
+  case 'up':
+    moved = this.moveUp();
+    break;
+  case 'down':
+    moved = this.moveDown();
+    break;
+}
+
+if (moved) {
+  this.addRandomTile();
+  this.checkWin();
+  
+  if (this.isGameOver()) {
+    this.lost = true;
+  }
+}
+
+return moved;</code></pre>
+<p>}</p>
+<p>// Get the current game state getState() { return { grid: this.grid, score: this.score, won: this.won, lost: this.lost, emptyCells: this.getEmptyCells().length }; } }</p>
+<p>// Example usage: // // const game = new Game2048(); // // // Handle keyboard input // document.addEventListener(‘keydown’, (event) =&gt; { // switch(event.key) { // case ‘ArrowLeft’: // game.move(‘left’); // break; // case ‘ArrowRight’: // game.move(‘right’); // break; // case ‘ArrowUp’: // game.move(‘up’); // break; // case ‘ArrowDown’: // game.move(‘down’); // break; // } //<br>
+// // Update UI based on game.getState() // });</p>
+</section>
+<section id="claude-3.7-sonnet-non-extended-thinking" class="level3">
+<h3 class="anchored" data-anchor-id="claude-3.7-sonnet-non-extended-thinking">Claude 3.7 Sonnet Non-Extended Thinking</h3>
+<p>I’ll create the core logic for the 2048 game. Let me implement that for you:</p>
+<p>This JavaScript implementation provides the complete logic for the 2048 game. The key aspects of the implementation include:</p>
+<ol type="1">
+<li><strong>Board Management</strong>:
+<ul>
+<li>4x4 grid represented as a 2D array</li>
+<li>Initialization with two random tiles (90% chance of 2, 10% chance of 4)</li>
+</ul></li>
+<li><strong>Game Mechanics</strong>:
+<ul>
+<li>Movement in four directions (up, right, down, left)</li>
+<li>Merging identical tiles during movement</li>
+<li>Score tracking when tiles merge</li>
+<li>Win detection when a 2048 tile is created</li>
+<li>Loss detection when no moves are possible</li>
+</ul></li>
+<li><strong>Game Flow</strong>:
+<ul>
+<li>After each valid move, a new random tile appears</li>
+<li>The game ends when either 2048 is reached (win) or no more moves are possible (loss)</li>
+</ul></li>
+</ol>
+<p>To use this code, you would create a new game instance and call the move method with the direction (“up”, “right”, “down”, or “left”). The getState method returns the current state of the game including the grid, score, and game status.</p>
+<p>Would you like me to explain any specific part of the implementation in more detail?</p>
+<p><strong>Below is the code implementation</strong></p>
+<p>class Game2048 { constructor(size = 4) { this.size = size; this.grid = Array(size).fill().map(() =&gt; Array(size).fill(0)); this.score = 0; this.won = false; this.lost = false;</p>
+<pre><code>// Initialize with two random tiles
+this.addRandomTile();
+this.addRandomTile();</code></pre>
+<p>}</p>
+<p>// Add a new random tile (2 or 4) to an empty cell addRandomTile() { if (this.isGridFull()) return false;</p>
+<pre><code>let emptyCells = [];
+
+// Find all empty cells
+for (let row = 0; row &lt; this.size; row++) {
+  for (let col = 0; col &lt; this.size; col++) {
+    if (this.grid[row][col] === 0) {
+      emptyCells.push({ row, col });
+    }
+  }
+}
+
+// If there are empty cells, add a new tile
+if (emptyCells.length &gt; 0) {
+  const { row, col } = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+  // 90% chance of 2, 10% chance of 4
+  this.grid[row][col] = Math.random() &lt; 0.9 ? 2 : 4;
+  return true;
+}
+
+return false;</code></pre>
+<p>}</p>
+<p>// Check if the grid is completely filled isGridFull() { for (let row = 0; row &lt; this.size; row++) { for (let col = 0; col &lt; this.size; col++) { if (this.grid[row][col] === 0) { return false; } } } return true; }</p>
+<p>// Check if any moves are possible canMove() { // Check for empty cells if (!this.isGridFull()) return true;</p>
+<pre><code>// Check for possible merges horizontally and vertically
+for (let row = 0; row &lt; this.size; row++) {
+  for (let col = 0; col &lt; this.size; col++) {
+    const value = this.grid[row][col];
+    
+    // Check right
+    if (col &lt; this.size - 1 &amp;&amp; value === this.grid[row][col + 1]) {
+      return true;
+    }
+    
+    // Check down
+    if (row &lt; this.size - 1 &amp;&amp; value === this.grid[row + 1][col]) {
+      return true;
+    }
+  }
+}
+
+return false;</code></pre>
+<p>}</p>
+<p>// Move tiles in a specific direction and merge where possible move(direction) { if (this.won || this.lost) return false;</p>
+<pre><code>let moved = false;
+let prevGrid = JSON.parse(JSON.stringify(this.grid));
+
+switch(direction) {
+  case 'up':
+    moved = this.moveUp();
+    break;
+  case 'right':
+    moved = this.moveRight();
+    break;
+  case 'down':
+    moved = this.moveDown();
+    break;
+  case 'left':
+    moved = this.moveLeft();
+    break;
+  default:
+    return false;
+}
+
+// If the grid changed, add a new random tile
+if (moved) {
+  this.addRandomTile();
+  
+  // Check if the player won (reached 2048)
+  this.checkWin();
+  
+  // Check if the player lost (no moves available)
+  if (!this.canMove()) {
+    this.lost = true;
+  }
+  
+  return true;
+}
+
+return false;</code></pre>
+<p>}</p>
+<p>// Helper function to rotate the grid for easier move implementation rotateGrid(times = 1) { let newGrid = JSON.parse(JSON.stringify(this.grid));</p>
+<pre><code>for (let t = 0; t &lt; times; t++) {
+  const rotated = Array(this.size).fill().map(() =&gt; Array(this.size).fill(0));
+  
+  for (let row = 0; row &lt; this.size; row++) {
+    for (let col = 0; col &lt; this.size; col++) {
+      rotated[col][this.size - 1 - row] = newGrid[row][col];
+    }
+  }
+  
+  newGrid = rotated;
+}
+
+return newGrid;</code></pre>
+<p>}</p>
+<p>// Move tiles left and merge where possible moveLeft() { let moved = false;</p>
+<pre><code>for (let row = 0; row &lt; this.size; row++) {
+  // Get non-zero tiles in this row
+  let tiles = this.grid[row].filter(val =&gt; val !== 0);
+  
+  // Merge adjacent equal tiles
+  for (let i = 0; i &lt; tiles.length - 1; i++) {
+    if (tiles[i] === tiles[i + 1]) {
+      tiles[i] *= 2;
+      tiles[i + 1] = 0;
+      this.score += tiles[i];
+      moved = true;
+      i++; // Skip the merged tile
+    }
+  }
+  
+  // Remove zeros (merged tiles)
+  tiles = tiles.filter(val =&gt; val !== 0);
+  
+  // Fill in remaining cells with zeros
+  while (tiles.length &lt; this.size) {
+    tiles.push(0);
+  }
+  
+  // Check if the row changed
+  if (!this.grid[row].every((val, idx) =&gt; val === tiles[idx])) {
+    moved = true;
+  }
+  
+  // Update the row
+  this.grid[row] = tiles;
+}
+
+return moved;</code></pre>
+<p>}</p>
+<p>// Move tiles right by reversing, moving left, and reversing back moveRight() { for (let row = 0; row &lt; this.size; row++) { this.grid[row].reverse(); }</p>
+<pre><code>const moved = this.moveLeft();
+
+for (let row = 0; row &lt; this.size; row++) {
+  this.grid[row].reverse();
+}
+
+return moved;</code></pre>
+<p>}</p>
+<p>// Move tiles up by transposing, moving left, and transposing back moveUp() { // Transpose this.grid = this.rotateGrid(3);</p>
+<pre><code>const moved = this.moveLeft();
+
+// Transpose back
+this.grid = this.rotateGrid();
+
+return moved;</code></pre>
+<p>}</p>
+<p>// Move tiles down by transposing, moving right, and transposing back moveDown() { // Transpose this.grid = this.rotateGrid(3);</p>
+<pre><code>const moved = this.moveRight();
+
+// Transpose back
+this.grid = this.rotateGrid();
+
+return moved;</code></pre>
+<p>}</p>
+<p>// Check if the player has won (reached 2048) checkWin() { for (let row = 0; row &lt; this.size; row++) { for (let col = 0; col &lt; this.size; col++) { if (this.grid[row][col] === 2048) { this.won = true; return true; } } } return false; }</p>
+<p>// Get the current state of the game getState() { return { grid: this.grid, score: this.score, won: this.won, lost: this.lost, canMove: this.canMove() }; }</p>
+<p>// Reset the game reset() { this.grid = Array(this.size).fill().map(() =&gt; Array(this.size).fill(0)); this.score = 0; this.won = false; this.lost = false;</p>
+<pre><code>// Initialize with two random tiles
+this.addRandomTile();
+this.addRandomTile();</code></pre>
+<p>} }</p>
+<p>// Example usage: // const game = new Game2048(); // game.move(‘left’); // game.move(‘right’); // game.move(‘up’); // game.move(‘down’); // console.log(game.getState());</p>
+</section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion:</h3>
+<p>While on the surface the two outputs look very similar we can see that the code in the extended version is better commented and goes into greater detail. Perhaps this was not the best test case to see the differences in the models - it will be interesting to see how this gap grows and what types of models are used for everyday tasks.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/logbrass\.github\.io\/comm4190_S25_Using_LLMs_Blog\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
