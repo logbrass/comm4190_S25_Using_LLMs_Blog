@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Logan Brassington">
-<meta name="dcterms.date" content="2024-03-01">
-<meta name="description" content="Can ChatGPT solve puzzles?">
+<meta name="dcterms.date" content="2025-03-17">
+<meta name="description" content="Image generation with Gemini 2.0">
 
-<title>More Puzzles – My Explorations with LLMs</title>
+<title>Exploring Google Gemini 2.0 Flash – My Explorations with LLMs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -116,15 +116,15 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">More Puzzles</h1>
+      <h1 class="title">Exploring Google Gemini 2.0 Flash</h1>
                   <div>
         <div class="description">
-          Can ChatGPT solve puzzles?
+          Image generation with Gemini 2.0
         </div>
       </div>
                           <div class="quarto-categories">
                 <div class="quarto-category">LLMs</div>
-                <div class="quarto-category">Models</div>
+                <div class="quarto-category">Image Generation</div>
               </div>
                   </div>
   </div>
@@ -142,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">March 1, 2024</p>
+        <p class="date">March 17, 2025</p>
       </div>
     </div>
     
@@ -161,90 +161,25 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="more-puzzles" class="level2">
-<h2 class="anchored" data-anchor-id="more-puzzles">More Puzzles</h2>
-<p>In a previous blog post I explored how Chat GPT did with a couple of riddles and puzzles from :https://puzzlewocky.com/brain-teasers/classic-short-brain-teasers-and-riddles/. Having always loved puzzles - I thought it would be interesting to explore this a bit more.</p>
-<p>It is interesting to observe what types of puzzles GPT is able to handle well and what types it can’t.</p>
-<section id="davids-father" class="level3">
-<h3 class="anchored" data-anchor-id="davids-father">David’s Father:</h3>
-<p><strong>Question:</strong> David’s father has three sons: Snap, Crackle, and ________?</p>
-<p><strong>GPT Response:</strong> David!</p>
-<p><strong>Answer:</strong> David.</p>
-<p><strong>Analysis:</strong> GPT got it right - we can try some harder ones.</p>
+<section id="image-generation-with-llms" class="level2">
+<h2 class="anchored" data-anchor-id="image-generation-with-llms">Image Generation with LLMs</h2>
+<p>One of the challenges with Image diffusion models is that the images generated often lack control / realistic context. There are limited platforms that allow for easy image generation once the inital image has been diffused. Google recently launched their Gemini 2.0 Flash model that has this feature - we will give it a try and make some incremental changes.</p>
+<section id="inital-prompt" class="level3">
+<h3 class="anchored" data-anchor-id="inital-prompt">Inital Prompt</h3>
+<p>Generate an image of a dog in the desert.</p>
+<p><img src="1.jpeg" width="50%"></p>
+<p>Make the dog have black hair - change nothing else</p>
+<p><img src="2.jpeg" width="50%"></p>
+<p>Make the sky orange instead of light blue.</p>
+<p><img src="3.jpeg" width="50%"></p>
+<p>Give the dog shoes.</p>
+<p><img src="4.jpeg" width="50%"></p>
+<p>Give the dog a hat - and make the image night time.</p>
+<p><img src="5.jpeg" width="50%"></p>
 </section>
-<section id="apples-and-oranges" class="level3">
-<h3 class="anchored" data-anchor-id="apples-and-oranges">Apples and Oranges:</h3>
-<p><strong>Question:</strong> George shows Vincent three closed boxes. One contains only apples, one contains only oranges, and one contains a mix of apples and oranges. The boxes are labeled Apples, Oranges, and Mixed, but George says all of the boxes are labeled incorrectly. Vincent is allowed to choose one box and pick one piece of fruit from it at random. He does so and is able to correctly identify all three boxes. How did he do it?</p>
-<p><strong>GPT Response:</strong> Vincent knows that all the labels are incorrect, so he can use logic to deduce the correct labels. Here’s how he does it:</p>
-<p>Choose the “Mixed” box: Since every label is wrong, the box labeled “Mixed” cannot actually contain both apples and oranges—it must contain only apples or only oranges.</p>
-<p>Pick a fruit from the “Mixed” box: Suppose Vincent picks an apple. That means this box only contains apples (because it cannot be mixed).</p>
-<p>Relabel the boxes logically:</p>
-<p>The box labeled “Apples” cannot contain only apples (since its label is wrong). It must contain either only oranges or the mixed fruit. The box labeled “Oranges” cannot contain only oranges (since its label is wrong). It must contain either only apples or the mixed fruit.</p>
-<p>Since we now know the “Mixed” box actually contains only apples, the box labeled “Oranges” must be the mixed box (because it cannot actually be oranges-only).</p>
-<p>That leaves the box labeled “Apples,” which must actually contain only oranges.</p>
-<p>Final Box Assignments: The “Mixed” box (incorrectly labeled) actually contains only apples. The “Oranges” box (incorrectly labeled) actually contains both apples and oranges. The “Apples” box (incorrectly labeled) actually contains only oranges. By picking just one fruit, Vincent was able to deduce the correct labeling of all the boxes!</p>
-<p><strong>Answer:</strong> Vincent chooses a fruit from the box labeled Mixed. He knows this box is labeled incorrectly, so the box must actually contain either all apples or all oranges. If he pulls out an apple, then that must be the box of all apples. Since the other two boxes are labeled Apples and Oranges, and they are both labeled incorrectly, the box of all oranges must be labeled Apples. That means the box labeled Oranges contains mixed fruit.</p>
-<p>If he pulls out an orange, then that must be the box of all oranges. Since the other two boxes are labeled Apples and Oranges, and they are both labeled incorrectly, the box of all apples must be labeled Oranges. That means the box labeled Apples contains mixed fruit.</p>
-<p><strong>Analysis:</strong> GPT again gave the correct assessment in a concise way - I think that it was able to break down the problem into a clear concise way to approach the problem.</p>
-</section>
-<section id="the-stopped-clock" class="level3">
-<h3 class="anchored" data-anchor-id="the-stopped-clock">The Stopped Clock:</h3>
-<p><strong>Question:</strong> Erika forgot to wind the clock on her wall, so it has stopped, and that is her only timepiece. She walks to a friend’s house to visit, observing the correct time on her friend’s clock while she is there, and then walks home. When she gets home she makes a simple calculation and then sets her clock to the correct time, despite not knowing how long it took her to walk home from her friend’s house. How did she do it?</p>
-<p><strong>GPT Response:</strong> Erika uses a clever trick to determine the correct time without knowing her exact walking duration. Here’s how she does it:</p>
-<ol type="1">
-<li><p><strong>Note the stopped clock’s time</strong> before leaving her house.</p></li>
-<li><p><strong>Walk to her friend’s house</strong> and check the correct time on her friend’s clock upon arrival.</p></li>
-<li><p><strong>Spend some time at her friend’s house</strong> and check the correct time again just before leaving.</p></li>
-<li><p><strong>Walk home</strong> and look at the time on the stopped clock upon arrival.</p></li>
-<li><p><strong>Calculate the correct time using symmetry</strong>:</p>
-<ul>
-<li>Let’s say when she left home, the stopped clock showed <strong>X</strong>.</li>
-<li>When she arrived at her friend’s house, the correct time was <strong>A</strong>.</li>
-<li>When she left her friend’s house, the correct time was <strong>B</strong>.</li>
-<li>When she got home, the stopped clock still showed <strong>X</strong>.</li>
-</ul></li>
-</ol>
-<p>Since her walk to and from her friend’s house likely took the same amount of time, the correct time upon her arrival home is the midpoint between <strong>A</strong> and <strong>B</strong>:</p>
-<p>[ = B + ]</p>
-<p>By setting her clock to that calculated time, she correctly resets it!</p>
-<p><strong>Answer:</strong> Before she left her house, Erika wound her clock and set it to 12 o’clock. Therefore, when she returned, she could easily see the total amount of time she had been gone. At her friend’s house, she noted the time when she arrived and when she left, so she knows the amount of time she spent at her friend’s house. She subtracts that from the total time she was gone and divides by two. That is her one-way travel time from her friend’s house, which she adds to the time that was showing on her friend’s clock when she left her friend’s house.</p>
-<p><strong>Analysis:</strong> Again there was a logical thought process - ChatGPT was able to talk through the problem through to the correct answer.</p>
-</section>
-<section id="a-bat-and-a-ball" class="level3">
-<h3 class="anchored" data-anchor-id="a-bat-and-a-ball">A Bat and a Ball:</h3>
-<p><strong>Question:</strong> A bat and a ball cost $1.10 together. The bat costs $1 more than the ball. How much does the ball cost?</p>
-<p><strong>GPT Response:</strong> Let the cost of the ball be <strong>x</strong> dollars.<br>
-Since the bat costs <strong>$1 more</strong> than the ball, the bat’s cost is <strong>x + 1</strong> dollars.</p>
-<p>Together, they cost <strong>$1.10</strong>, so we set up the equation:</p>
-<p>[ x + (x + 1) = 1.10 ]</p>
-<p>Simplify:</p>
-<p>[ 2x + 1 = 1.10 ]</p>
-<p>Subtract <strong>1</strong> from both sides:</p>
-<p>[ 2x = 0.10 ]</p>
-<p>Divide by <strong>2</strong>:</p>
-<p>[ x = 0.05 ]</p>
-<p>So, the <strong>ball costs $0.05 (5 cents)</strong>, and the bat costs <strong>$1.05 (1 dollar and 5 cents)</strong>, which correctly adds up to <strong>$1.10</strong>.</p>
-<p><strong>Answer:</strong> The ball costs 5 cents. The bat costs $1.05. Many people answer too quickly and say that the ball costs 10 cents. However, if that were true, and the bat costs $1 more than the ball, then the bat would have to cost $1.10, making the total cost $1.20.</p>
-<p><strong>Analysis:</strong> Here it was interesting to see that ChatGPT took an algebraic approach - that is to say one where it treated the problem like a Math word problem (which it was).</p>
-</section>
-<section id="a-unique-state-name" class="level3">
-<h3 class="anchored" data-anchor-id="a-unique-state-name">A Unique State Name:</h3>
-<p><strong>Question:</strong> What is unique about the word Alaska?</p>
-<p><strong>GPT Response:</strong> The word <strong>“Alaska”</strong> has several unique features:</p>
-<ol type="1">
-<li><strong>Only U.S. state name with three vowels at the start</strong> – It starts with <strong>A-L-A</strong>, three vowels in a row.<br>
-</li>
-<li><strong>Symmetry in letters</strong> – The structure <strong>A-L-A-S-K-A</strong> has a balanced, almost palindrome-like appearance.<br>
-</li>
-<li><strong>Single continuous sound</strong> – When spoken, it flows smoothly without abrupt breaks.<br>
-</li>
-<li><strong>Derived from an Indigenous word</strong> – It comes from the Aleut word <em>Alyeska</em>, meaning “great land.”<br>
-</li>
-<li><strong>Contains no repeated consonants</strong> – Even though “A” appears three times, all consonants (L, S, K) are unique.</li>
-</ol>
-<p>It’s a visually and phonetically interesting word!</p>
-<p><strong>Answer:</strong> It is the only state name that can be typed using just one row of keys on a keyboard.</p>
-<p><strong>Analysis:</strong> Here GPT got the question wrong and clearly was grasping at straws. That being said there seemed to be a bit of logic in the sense that ackowledging the AKA and trying to break down the letter structure was definitley in the right direction. I think that the hard part about this question was there were was not straight forward and did not provide the needed context. This is indicative of the types of abstract problems that GPT may have issues solving in the future.</p>
+<section id="analysis" class="level3">
+<h3 class="anchored" data-anchor-id="analysis">Analysis</h3>
+<p>The model performed amazingly - iterating on the same image adding bits and pieces as needed. It was interesting how on this last prompt for the image to be at night - it really portrayed a dark image. This type of image generation is going to open the door for marketters and anyone who needs to make incremental chnges to an image.</p>
 
 
 </section>
