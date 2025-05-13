@@ -1,8 +1,8 @@
 ---
 title: About
-image: profile.jpg
+image: prof.jpg
 about:
   template: jolla
 ---
 
-About this blog
+This is a blog for the COMM 4190 course at the University of Pennsylvania. My name is Logan and here I explore some of my interactions with LLMs throughout the semester.
