@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Logan Brassington">
+<meta name="dcterms.date" content="2025-05-05">
+<meta name="description" content="How will ChatGPT Handle the Trolley Problem?">
 
-<title>About – My Explorations with LLMs</title>
+<title>Trolley Problem – My Explorations with LLMs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e36ce5c26c48eccda62d8cde5e438854.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-e36ce5c26c48eccda62d8cde5e438854.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,17 +72,17 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">My Explorations with LLMs</span>
     </a>
   </div>
@@ -89,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -110,29 +114,117 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Trolley Problem</h1>
+                  <div>
+        <div class="description">
+          How will ChatGPT Handle the Trolley Problem?
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">LLMs</div>
+                <div class="quarto-category">prompting</div>
+                <div class="quarto-category">Ethics</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Logan Brassington </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">May 5, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-jolla">
-  <img src="profile.jpg" class="about-image
-  round " style="height: 15em; width: 15em;">
- <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">About</h1>
-</div>
-<div class="quarto-title-meta">
-  </div>
-</header><main class="content" id="quarto-document-content">
-<p>About this blog</p>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-</main>  
-</div>
- <!-- /main -->
+
+
+
+<section id="the-trolley-problem" class="level2">
+<h2 class="anchored" data-anchor-id="the-trolley-problem">The Trolley Problem</h2>
+<p>This is the classic scenario involves a runaway trolley heading down a track toward five people who are tied up and unable to move. You, as an observer, are standing next to a lever that can divert the trolley to another track, where there is one person tied up. You have two options:</p>
+<pre><code>1. Do nothing, and the trolley will continue on its current track, killing the five people.
+
+2. Pull the lever, diverting the trolley to the other track, where it will kill one person, but save the five.</code></pre>
+<p>This problem is designed to test what is morally right and wrong - are you killing one person and saving five - are you responsible if you do nothing. We will explore how ChatGPT (4o) will react to various versions of the Trolley Problem. (Note that in the follwing prompts GPT is specifically told to pick one option or the other).</p>
+<section id="the-classic-1-person-v-5-people---do-you-pull-the-lever" class="level3">
+<h3 class="anchored" data-anchor-id="the-classic-1-person-v-5-people---do-you-pull-the-lever">The Classic: 1 person v 5 people - Do you pull the lever</h3>
+<p><strong>GPT:</strong> I would pull the lever to divert the trolley, saving the five people at the cost of one. The reasoning behind this choice is based on the principle of minimizing harm or maximizing overall well-being, often referred to as utilitarianism. While both options involve a tragic loss of life, diverting the trolley to the track with one person reduces the overall harm.</p>
+</section>
+<section id="bystander-at-the-switch" class="level3">
+<h3 class="anchored" data-anchor-id="bystander-at-the-switch">Bystander at the Switch</h3>
+<p>In this version, instead of a lever, you are standing on a bridge over the trolley tracks, and you can stop the trolley by pushing a large person onto the track. This person would die, but their body would stop the trolley, saving the five people. The dilemma now involves the ethics of directly causing a person’s death by physically pushing them.</p>
+<p><strong>GPT:</strong> In this scenario, I would not push the large person onto the track. While it still involves saving five lives, directly causing someone’s death by physically pushing them feels like a more significant moral violation compared to pulling a lever. The act of directly harming an individual, even for a greater good, raises more ethical concerns, such as the autonomy of the individual and the responsibility for their death.</p>
+</section>
+<section id="the-loop" class="level3">
+<h3 class="anchored" data-anchor-id="the-loop">The Loop</h3>
+<p>In this variation, if you pull the lever, the trolley will hit a person on the track, but that person’s body will act as a barrier, stopping the trolley before it hits the five people. The twist here is that the person on the track is essential to the outcome, and you must decide if it is ethical to sacrifice one person to save five.</p>
+<p><strong>GPT:</strong> In this case, I would pull the lever. The ethical justification is based on the principle of minimizing harm, as sacrificing one person to save five still seems like the option that results in a better overall outcome. This is a utilitarian perspective, where the goal is to reduce the overall loss of life. However, it remains a difficult moral decision, as it involves actively deciding to sacrifice one person for the greater good. The key difference here is that the person on the track is essential for stopping the trolley, and without them, the five would likely die.</p>
+</section>
+<section id="the-doctrine-of-double-effect" class="level3">
+<h3 class="anchored" data-anchor-id="the-doctrine-of-double-effect">The Doctrine of Double Effect</h3>
+<p>This variation focuses on the moral distinction between intended consequences and unintended consequences. For example, in a situation where the trolley could be diverted to kill one person (which is intended) or where the person’s death is an unintended side effect of a greater good, some philosophers argue that the latter may be more morally acceptable.</p>
+<p><strong>GPT:</strong> In this variation, I would lean towards not pulling the lever. The distinction between intended and unintended consequences plays a crucial role in ethical decision-making. If the death of the person on the track is an unintended side effect of saving the five people, it might be seen as morally less objectionable than if the death were the direct, intended outcome. In this case, the act of diverting the trolley, where the death is the direct result of your choice, could be morally harder to justify than if the death occurred as a side effect of a decision aimed at a greater good. Many moral frameworks, such as the Doctrine of Double Effect, support the idea that unintended harm is less morally culpable than intended harm.</p>
+</section>
+<section id="self-driving-car" class="level3">
+<h3 class="anchored" data-anchor-id="self-driving-car">Self Driving Car</h3>
+<p>Here is a variation of the trolley problem that is often used to discuss ethics in AI, particularly self-driving cars. In this scenario, an autonomous car is faced with a choice: swerve and hit a pedestrian or stay straight and hit the driver’s passenger. The dilemma focuses on programming the vehicle to make decisions that minimize harm and how to prioritize lives in such situations.</p>
+<p><strong>GPT:</strong> In this scenario, the ethical decision depends on how the self-driving car is programmed to prioritize lives. If I had to make a choice for programming the car, I would prioritize minimizing harm overall, which might involve considering the number of lives at risk. In this case, swerving to hit the pedestrian would save the passenger, but the ethical dilemma arises in the programming of the car—how to weigh the value of different lives and the decision-making process behind it.</p>
+<p>A potential approach could involve minimizing the overall harm or prioritizing certain contextual factors, such as the likelihood of survival based on position, age, health, or other criteria. However, this is a highly complex and sensitive ethical issue that doesn’t have a straightforward answer and would require careful considerations, including the potential impact on trust in autonomous technology. Ideally, this would be informed by societal consensus and legal frameworks rather than a purely technical or utilitarian approach.</p>
+</section>
+<section id="the-transplant-variant" class="level3">
+<h3 class="anchored" data-anchor-id="the-transplant-variant">The “Transplant” Variant</h3>
+<p>In this scenario, a doctor has five patients who need organ transplants to survive, and one healthy person with compatible organs. The doctor must decide whether to kill the healthy person to save the five patients. This variant challenges the ethical implications of sacrificing an individual for the greater good, questioning whether it’s acceptable to sacrifice one to save multiple lives.</p>
+<p><strong>GPT:</strong> In this scenario, I would not kill the healthy person to save the five patients. The ethical principle of not intentionally killing an innocent person, even for a greater good, is a key consideration here. This aligns with deontological ethics, which focuses on the moral integrity of actions themselves, rather than their consequences. Sacrificing one person to save others violates the individual’s right to life and autonomy.</p>
+<p>While the outcome might result in saving more lives, the act of killing someone, even with good intentions, is morally unacceptable in many ethical frameworks. This situation highlights the moral complexity of balancing the value of individual lives against the perceived greater good.</p>
+</section>
+<section id="with-identity" class="level3">
+<h3 class="anchored" data-anchor-id="with-identity">With Identity</h3>
+<p>Here, the dilemma adds another layer by introducing the identities of the people involved. For example, one of the five people could be someone you love, or the person on the other track could be a stranger. This variant challenges whether personal relationships should influence moral decisions.</p>
+<p><strong>GPT:</strong> In this scenario, I would be inclined to say that personal relationships should not fundamentally change the moral decision-making process. From an ethical standpoint, the principle of impartiality suggests that every life should be valued equally, regardless of personal connections. However, it’s also true that emotions, such as the desire to protect loved ones, can strongly influence our choices, making this a deeply human dilemma.</p>
+<p>If I had to make a choice, I would try to maintain a focus on the principle of minimizing harm, even though it is emotionally difficult. That said, many would argue that in real life, personal relationships inevitably play a role in how we approach moral decisions. This tension between objective ethical reasoning and emotional attachment is one of the complexities of human moral judgment.</p>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion:</h2>
+<p>It is an interesting exercise to see how ChatGPT makes its decisions - there are valid arguments for both of these circumstances. The example about self driving cars is especially relevant, as it is a real scenerio that would happen. I also think that as robotics advance these types of issues could be more and more prevelant.</p>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

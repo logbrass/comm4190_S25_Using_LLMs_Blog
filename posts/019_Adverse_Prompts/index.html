@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Logan Brassington">
+<meta name="dcterms.date" content="2025-05-09">
+<meta name="description" content="How does Claude Sonnet 3.7 perform with tough to parse prompts">
 
-<title>About – My Explorations with LLMs</title>
+<title>Adversarial Prompts – My Explorations with LLMs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e36ce5c26c48eccda62d8cde5e438854.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-e36ce5c26c48eccda62d8cde5e438854.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,17 +72,17 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">My Explorations with LLMs</span>
     </a>
   </div>
@@ -89,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -110,29 +114,125 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Adversarial Prompts</h1>
+                  <div>
+        <div class="description">
+          How does Claude Sonnet 3.7 perform with tough to parse prompts
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">LLMs</div>
+                <div class="quarto-category">prompting</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Logan Brassington </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">May 9, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-jolla">
-  <img src="profile.jpg" class="about-image
-  round " style="height: 15em; width: 15em;">
- <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">About</h1>
-</div>
-<div class="quarto-title-meta">
-  </div>
-</header><main class="content" id="quarto-document-content">
-<p>About this blog</p>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-</main>  
-</div>
- <!-- /main -->
+
+
+
+<section id="adversarial-prompts" class="level2">
+<h2 class="anchored" data-anchor-id="adversarial-prompts">Adversarial Prompts</h2>
+<p>Adversarial prompts are inputs intentionally designed to confuse an LLM - often by coming up with parsing issues. These prompts stress-test a model’s reasoning. It is important to test this as typos will happen with any user input - as will odd charaters.</p>
+<p>The below prompts are designed to push Sonnet 3.7 to failure. All of the prompts will be prefaced with “What does this say:”.</p>
+<section id="whitespace-flooding" class="level3">
+<h3 class="anchored" data-anchor-id="whitespace-flooding">Whitespace Flooding</h3>
+<p><strong>Prompt:</strong> W h a t i s t h e c a p i t a l o f F r a n c e ?</p>
+<p><strong>CLAUDE:</strong> The text says: “What is the capital of France?” - The capital of France is Paris. Paris has been the capital city of France since 987 CE when Hugh Capet, the first king of the Capetian dynasty, made the city his seat of government.</p>
+</section>
+<section id="zalgo-text" class="level3">
+<h3 class="anchored" data-anchor-id="zalgo-text">Zalgo Text</h3>
+<p><strong>Prompt:</strong> W̴̩̻͑̈́ḣ̵͚͘a̸̺͔̅t̴͉͐ ̵̼̿i̸͕͚̔s̶̡͎̀̓ ̷̍ͅg̴̩̐͘ó̵̠͎i̷̗͓̚n̴͇̆̚ͅg̶̘̺̓̽ ̷̹̄̈́ò̴̜n̸̠̈́?</p>
+<p><strong>CLAUDE:</strong> The text says: “What is going on?”</p>
+<p>This appears to be regular text that has been stylized with special characters or “zalgo text” formatting, which adds diacritical marks above and below the letters to create a distorted, glitchy appearance. It’s a style sometimes used online for aesthetic purposes or to convey a sense of distortion or chaos.</p>
+</section>
+<section id="ascii-substitution" class="level3">
+<h3 class="anchored" data-anchor-id="ascii-substitution">ASCII Substitution</h3>
+<p><strong>Prompt:</strong> Wh@t d03s “c0gn1t1v3 sc13nc3” m34n?</p>
+<p><strong>CLAUDE:</strong> The text says: “What does ‘cognitive science’ mean?”</p>
+<p>The message uses “leetspeak” or “1337speak,” a form of internet slang where characters are replaced with numbers or symbols that visually resemble them (like @ for a, 3 for e, 1 for i, etc.).</p>
+<p>Cognitive science is an interdisciplinary field that studies the mind and its processes. It combines research methods from psychology, neuroscience, linguistics, philosophy, computer science, and anthropology to understand how the human mind works, including perception, thinking, learning, language, attention, memory, reasoning, and emotion. The field aims to explain the nature of human knowledge, its components, development, and use.</p>
+</section>
+<section id="broken-case-punctuation" class="level3">
+<h3 class="anchored" data-anchor-id="broken-case-punctuation">Broken Case &amp; Punctuation</h3>
+<p><strong>Prompt:</strong> wHy IS, tHe EaRTh sO cOld In thE NigHT?</p>
+<p><strong>CLAUDE:</strong> The text says: “Why is the earth so cold in the night?”</p>
+<p>This text is written in “mocking SpongeBob” or “alternating case” style, where letters alternate between uppercase and lowercase in an irregular pattern. This style is often used online to convey a sarcastic or mocking tone.</p>
+<p>As for the question itself: The Earth gets colder at night because it no longer receives warmth from the sun’s radiation. During the day, the Earth’s surface absorbs solar energy and heats up. When the sun sets, this heat source is removed, and the Earth’s surface continues to radiate heat into space, causing temperatures to drop. This is especially noticeable in areas with dry air (like deserts), as water vapor in the atmosphere can help retain some heat overnight.</p>
+</section>
+<section id="delimiter-injection" class="level3">
+<h3 class="anchored" data-anchor-id="delimiter-injection">Delimiter Injection</h3>
+<p><strong>Prompt:</strong> ||What|||||is||||the||speed|of|light?</p>
+<p><strong>CLAUDE:</strong> The text says: “What is the speed of light?”</p>
+<p>The message has added vertical bars (|) between and around some of the words, which don’t change the meaning but create a visual separation between the words.</p>
+<p>The speed of light in a vacuum is approximately 299,792,458 meters per second (or about 186,282 miles per second).</p>
+</section>
+<section id="base64-like-encoded-prompt" class="level3">
+<h3 class="anchored" data-anchor-id="base64-like-encoded-prompt">Base64-Like Encoded Prompt</h3>
+<p>This is “What does the Moon do every night?” in Base64</p>
+<p><strong>Prompt:</strong> V2hhdCBkb2VzIHRoZSBNb29uIGRvIGV2ZXJ5IG5pZ2h0Pw==</p>
+<p><strong>CLAUDE:</strong> The text appears to be Base64 encoded. When decoded, it says: “What does the Moon do every night?” The Moon doesn’t actually do the same thing “every night” as its behavior follows a monthly cycle rather than a daily one.</p>
+</section>
+<section id="broken-grammar-from-ocr-like-error" class="level3">
+<h3 class="anchored" data-anchor-id="broken-grammar-from-ocr-like-error">Broken Grammar from OCR-like Error</h3>
+<p><strong>Prompt:</strong> Wh€n i5 th€ b€5t tim3 t0 u53 AI in d€cisi0n m@king?</p>
+<p><strong>CLAUDE:</strong> This text says: “When is the best time to use AI in decision making?” The message uses leetspeak or textspeak substitutions (numbers and symbols for letters), including € for e, 5 for s, 3 for e, 0 for o, and @ for a.</p>
+</section>
+<section id="bilingual-noise-prompt" class="level3">
+<h3 class="anchored" data-anchor-id="bilingual-noise-prompt">Bilingual Noise Prompt</h3>
+<p>Prompt includes multiple languages interspersed with syntax glitches.</p>
+<p><strong>Prompt:</strong> ¿C0u1d 🧠你 t3ll me ⏰ l’hist0ire oF 🐍Python?</p>
+<p><strong>CLAUDE:</strong> The text says: “Could you tell me the history of Python?”</p>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion:</h2>
+<p>Overall Claude crushed this - I was surprsied that the Base64 did not trick it in the slightest. This likely means that there is an advanced parser running in the background to acompany the LLM. These prompts are a great example about how LLMs will continue to differentiate the signal from the noise and pickout the relevant information.</p>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
