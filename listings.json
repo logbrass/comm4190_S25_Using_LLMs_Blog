@@ -2,6 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/021_AI_Research/index.html",
+      "/posts/020_Word_Hunt/index.html",
       "/posts/019_Adverse_Prompts/index.html",
       "/posts/018_Trolly/index.html",
       "/posts/017_Curse/index.html",
